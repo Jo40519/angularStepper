@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StepsModule } from './pages/steps/steps.module';
+import { StepperModule } from './pages/steps/steps.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import { StepsModule } from './pages/steps/steps.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StepsModule
+    StepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
