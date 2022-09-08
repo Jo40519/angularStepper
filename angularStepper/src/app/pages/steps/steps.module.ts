@@ -12,6 +12,11 @@ import { DadosPessoaisComponent } from './dados-pessoais/dados-pessoais.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CardModule} from 'primeng/card';
 import { RouterModule } from '@angular/router';
+import { InputTextModule } from "primeng/inputtext";
+import { MultiSelectModule } from "primeng/multiselect";
+import { AutoCompleteModule } from "primeng/autocomplete";
+import { CalendarModule } from "primeng/calendar";
+
 
 
 
@@ -34,7 +39,11 @@ import { RouterModule } from '@angular/router';
     ButtonModule,
     StepsModule,
     ToastModule,
-     CardModule
+    CardModule,
+    InputTextModule,
+    MultiSelectModule,
+    AutoCompleteModule,
+    CalendarModule
   ],
   providers: [
     MessageService
