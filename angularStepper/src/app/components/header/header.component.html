@@ -1,0 +1,5 @@
+
+<p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000">
+  <app-menu [selecionado]="menuSelecionado === 'Cadastro'" [descricao]="'Cadastro'" (click)="botaoClick('Cadastro')"></app-menu>
+</p-sidebar>
+<p-button type="button" class="mr-2" (click)="visibleSidebar1 = true" icon="pi pi-bars"></p-button>
