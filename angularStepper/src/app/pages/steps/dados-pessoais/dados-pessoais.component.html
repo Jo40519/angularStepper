@@ -5,21 +5,21 @@
   <div class="p-fluid formgrid grid">
     <div class="field col-12 md:col-6">
       <label>Nome</label>
-      <input pInputText formControlName="firstName">
+      <input [(ngModel)]="dadosPessoaisClass!.firstName" pInputText formControlName="firstName">
   </div>
   <div class="field col-12 md:col-6">
       <label>Sobrenome</label>
-      <input formControlName="lastName" pInputText>
+      <input [(ngModel)]="dadosPessoaisClass!.lastName" formControlName="lastName" pInputText>
   </div>
   </div>
   <div class="p-fluid formgrid grid">
     <div class="field col-12 md:col-7">
       <label>Email</label>
-      <input pInputText formControlName="email">
+      <input [(ngModel)]="dadosPessoaisClass!.email" pInputText formControlName="email">
   </div>
   <div class="field col-12 md:col-5">
     <label for="basic">Data de Nascimento</label>
-    <p-calendar [showIcon]="true" formControlName="dtBorn"></p-calendar>
+    <p-calendar [(ngModel)]="dadosPessoaisClass!.dtBorn" [showIcon]="true" formControlName="dtBorn" dateFormat="dd/mm/yy"></p-calendar>
 </div>
   </div>
 </form>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import {SlideMenuModule} from 'primeng/slidemenu';
 import {MenuItem} from 'primeng/api';
 import {PanelMenuModule} from 'primeng/panelmenu';
+import {InputSwitchModule} from 'primeng/inputswitch';
 
 
 @NgModule({
@@ -30,9 +31,15 @@ import {PanelMenuModule} from 'primeng/panelmenu';
     ButtonModule,
     BrowserAnimationsModule,
     SlideMenuModule,
-    PanelMenuModule
+    PanelMenuModule,
+    InputSwitchModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt-BR'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

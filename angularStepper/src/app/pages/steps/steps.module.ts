@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StepComponent } from './step/step.component';
 import { HomeComponent } from './home/home.component';
@@ -29,6 +29,8 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import { ProductComponent } from './product/product.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { InputSwitchModule } from 'primeng/inputswitch';
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { ProductComponent } from './product/product.component';
     StepComponent,
     HomeComponent,
     DadosPessoaisComponent,
-    ProductComponent
+    ProductComponent,
+    ConfirmationComponent
   ],
   imports: [
     //Angular
@@ -67,13 +70,17 @@ import { ProductComponent } from './product/product.component';
     ConfirmDialogModule,
     MessageModule,
     MessagesModule,
-
+    InputSwitchModule,
     //SweetAlert2
     SweetAlert2Module
   ],
   providers: [
     MessageService,
-    ConfirmationService
+    ConfirmationService,
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt-BR'
+    }
   ],
   exports: [
     StepComponent

@@ -6,6 +6,9 @@ import { TicketService } from 'src/app/core/ticket.service';
 import {ConfirmationService} from 'primeng/api';
 
 import Swal from 'sweetalert2';
+import { state } from '@angular/animations';
+import { DadosPessoais } from 'src/app/models/dados-pessoais.model';
+import { DadosPessoaisInterface } from 'src/app/states/dados-pessoais-state';
 @Component({
   selector: 'app-dados-pessoais',
   templateUrl: './dados-pessoais.component.html',
@@ -14,9 +17,13 @@ import Swal from 'sweetalert2';
 export class DadosPessoaisComponent implements OnInit {
 
 
+  public dados!: unknown;
+  public dadosPessoaisClass!: DadosPessoais | undefined;
   public dadosPessoaisForm!: FormGroup;
   public msgs: Array<Message> = [];
+  public user!: DadosPessoais;
   dadosPessoais: any;
+  public submitted: boolean = false;
   get firstName() {return this.dadosPessoaisForm.get('firstName')}
   get lastName() {return this.dadosPessoaisForm.get('lastName')}
   get email() {return this.dadosPessoaisForm.get('email')}
@@ -26,11 +33,12 @@ export class DadosPessoaisComponent implements OnInit {
     private confirmationService: ConfirmationService,
     private ticketService: TicketService,
     private route: Router
-    ) { }
+    ) {}
 
   ngOnInit(): void {
+    this.dadosPessoaisClass = this.ticketService.getTicketInformation().dadosPessoais
     this.configurarFormulario();
-    this.dadosPessoais = this.ticketService.getTicketInformation()
+    this.setValueForm();
   }
 
   configurarFormulario() {
@@ -40,6 +48,15 @@ export class DadosPessoaisComponent implements OnInit {
       email: [null, Validators.email],
       dtBorn: [null, Validators.required]
     });
+  }
+
+  setValueForm() {
+    this.dadosPessoaisForm.patchValue({
+      firstName: this.dadosPessoaisClass?.firstName,
+      lastName: this.dadosPessoaisClass?.lastName,
+      email: this.dadosPessoaisClass?.email,
+      dtBorn: this.dadosPessoaisClass?.dtBorn
+    })
   }
 
 
@@ -59,9 +76,20 @@ validateMandatoryFields() {
         {severity:'warn', summary:'Atenção!', detail:'Campos obrigatórios não preenchdidos.'},
       ]
       return
-    } else {
-      this.ticketService.getTicketInformation().dadosPessoais = this.dadosPessoais;
-      this.route.navigate(['/cadastrar-produto'])
+    } else if(this.validateMandatoryFields()){
+     this.dadosPessoaisClass = this.ticketService.ticketInformation.dadosPessoais
+      // let dadosPessoais: DadosPessoais = {
+      //   id: this.dadosPessoais?.id,
+      //   firstName: this.dadosPessoaisForm.get('firstName')?.value,
+      //   lastName: this.dadosPessoaisForm.get('lastName')?.value,
+      //   email: this.dadosPessoaisForm.get('email')?.value,
+      //   dtBorn: this.dadosPessoaisForm.get('dtBorn')?.value
+      // }
+      this.route.navigate(['home/cadastrar-produto'])
+
+      return;
     }
+
+    this.submitted = true;
   }
 }

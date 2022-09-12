@@ -3,10 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { DadosPessoaisComponent } from './dados-pessoais/dados-pessoais.component';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
     children:[
       {
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: 'cadastrar-produto',
         component: ProductComponent
+      },
+      {
+        path: 'confirmation',
+        component: ConfirmationComponent
       }
     ]
   }

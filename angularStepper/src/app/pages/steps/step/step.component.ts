@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem, MessageService } from 'primeng/api';
+import { DadosPessoais } from '../../../models/dados-pessoais.model';
 
 @Component({
   selector: 'app-step',
@@ -8,6 +9,7 @@ import { MenuItem, MessageService } from 'primeng/api';
 })
 export class StepComponent implements OnInit {
 
+  dadosPessoais!: DadosPessoais
   items!: MenuItem[];
   activeIndex: number = 1;
   constructor(private messageService: MessageService) { }

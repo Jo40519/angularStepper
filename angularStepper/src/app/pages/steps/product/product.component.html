@@ -1,22 +1,23 @@
+<p-messages [(value)]="msgs"></p-messages>
 <p-card>
   <h3>Cadastrar seu Produto</h3>
   <form [formGroup]="cadastroProdutoForm">
 <div class="grid p-fluid">
     <div class="col-12 md:col-6">
       <label>Nome</label>
-      <input formControlName="name" pInputText>
+      <input [(ngModel)]="product!.name" formControlName="name" pInputText>
     </div>
 
     <div class="col-12 md:col-6">
         <label for="currency-us">Preço R$</label>
-        <p-inputNumber inputId="currency-us" mode="currency" currency="BRL" locale="pt-BR" formControlName="price">
+        <p-inputNumber [(ngModel)]="product!.price" mode="currency" currency="BRL" locale="pt-BR" formControlName="price">
         </p-inputNumber>
     </div>
 </div>
 </form>
 <br>
 <div class="grid justify-contend-end">
-<button pButton label="Back" class="grid justify-content-start"></button> &nbsp; &nbsp;
-<button pButton label="Next" class="grid justify-content-end"></button>
+<button (click)="back()" pButton label="Back" class="grid justify-content-start"></button> &nbsp; &nbsp;
+<button (click)="next()" pButton label="Next" class="grid justify-content-end"></button>
 </div>
 </p-card>

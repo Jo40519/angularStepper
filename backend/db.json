@@ -1,23 +1,23 @@
 {
   "user": [
     {
-      "id": 1,
-      "name": "João",
-      "email": "",
-      "dtBorn": ""
+        "id": 1,
+        "name": "João",
+        "email": "",
+        "dtBorn": ""
     },
     {
-      "name": "Milenna",
-      "email": "milenna.gabrielle@gmail.com",
-      "dtBorn": "10/08/1998",
-      "id": 3
+        "name": "Milenna",
+        "email": "milenna.gabrielle@gmail.com",
+        "dtBorn": "10/08/1998",
+        "id": 3
     }
-  ],
-  "product": [
+    ],
+    "product": [
     {
-      "id": 1,
-      "name": "",
-      "price": 1000
+        "id": 1,
+        "name": "",
+        "price": 1000
     }
-  ]
+    ]
 }

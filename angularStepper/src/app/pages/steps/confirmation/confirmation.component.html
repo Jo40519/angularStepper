@@ -1,0 +1,49 @@
+<div class="stepsdemo-content">
+<form [formGroup]="formCadastro">
+<p-card>
+  <h3>Dados Pessoais</h3>
+    <div class="p-fluid formgrid grid">
+      <div class="field col-12 md:col-6">
+        <label>Nome</label>
+        <input pInputText [(ngModel)]="dadosPessoais!.firstName" formControlName="firstName" [disabled]="true">
+    </div>
+    <div class="field col-12 md:col-6">
+        <label>Sobrenome</label>
+        <input pInputText [(ngModel)]="dadosPessoais!.lastName" formControlName="lastName" [disabled]="true">
+    </div>
+    </div>
+  <div class="p-fluid formgrid grid">
+    <div class="field col-12 md:col-7">
+      <label>Email</label>
+      <input pInputText [(ngModel)]="dadosPessoais!.email" formControlName="email" [disabled]="true">
+  </div>
+  <div class="field col-12 md:col-5">
+    <label for="basic">Data de Nascimento</label>
+    <p-calendar [(ngModel)]="dadosPessoais!.dtBorn" [showIcon]="true" formControlName="dtBorn" [disabled]="true"></p-calendar>
+</div>
+  </div>
+  <br>
+  <h3>Produto</h3>
+  <div class="grid p-fluid">
+    <div class="col-12 md:col-6">
+      <label>Nome</label>
+      <input [(ngModel)]="product!.name" formControlName="name" pInputText>
+    </div>
+
+    <div class="col-12 md:col-6">
+        <label for="currency-us">Preço R$</label>
+        <p-inputNumber [(ngModel)]="product!.price" mode="currency" currency="BRL" locale="pt-BR" formControlName="price">
+        </p-inputNumber>
+    </div>
+</div>
+
+<ng-template pTemplate="footer">
+  <div class="grid grid-nogutter justify-content">
+      <p-button (click)="back()" label="Back"  icon="pi pi-angle-left"></p-button> &nbsp; &nbsp;
+
+      <p-button label="Next"  icon="pi pi-angle-right" iconPos="right"></p-button>
+  </div>
+</ng-template>
+</p-card>
+</form>
+</div>

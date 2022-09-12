@@ -16,16 +16,16 @@ export class TicketService {
         dtBorn: null
     },
     product: {
-        class: null,
-        wagon: null,
-        seat: null
+        name: '',
+        price: undefined
     },
-    paymentInformation: {
-        cardholderName:'',
-        cardholderNumber:'',
-        date:'',
-        cvv:'',
-        remember:false
+    confirmation: {
+        dadosPessoais: {
+          firstName: '',
+          lastName: '',
+          email: '',
+          dtBorn: ''
+        }
     }
 };
 

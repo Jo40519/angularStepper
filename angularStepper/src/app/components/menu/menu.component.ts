@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { ThemeService } from '../../core/theme.service';
 
 @Component({
   selector: 'app-menu',
@@ -12,7 +13,7 @@ export class MenuComponent implements OnInit {
   @Input() selecionado = false;
   @Output() click = new EventEmitter<void>();
   items!: MenuItem[];
-  constructor() { }
+  constructor(private themeService: ThemeService) { }
 
   ngOnInit(): void {
 
@@ -21,5 +22,4 @@ export class MenuComponent implements OnInit {
   onClick() {
     this.click.emit()
   }
-
 }
