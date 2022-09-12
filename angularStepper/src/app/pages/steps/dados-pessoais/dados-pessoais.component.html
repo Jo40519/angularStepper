@@ -1,0 +1,31 @@
+<p-messages [(value)]="msgs"></p-messages>
+<p-card>
+  <h3>Dados Pessoais</h3>
+  <form [formGroup]="dadosPessoaisForm">
+  <div class="p-fluid formgrid grid">
+    <div class="field col-12 md:col-6">
+      <label>Nome</label>
+      <input pInputText formControlName="firstName">
+  </div>
+  <div class="field col-12 md:col-6">
+      <label>Sobrenome</label>
+      <input formControlName="lastName" pInputText>
+  </div>
+  </div>
+  <div class="p-fluid formgrid grid">
+    <div class="field col-12 md:col-7">
+      <label>Email</label>
+      <input pInputText formControlName="email">
+  </div>
+  <div class="field col-12 md:col-5">
+    <label for="basic">Data de Nascimento</label>
+    <p-calendar [showIcon]="true" formControlName="dtBorn"></p-calendar>
+</div>
+  </div>
+</form>
+<ng-template pTemplate="footer">
+  <div class="grid grid-nogutter justify-content-end">
+      <p-button label="Next" (click)="next()" icon="pi pi-angle-right" iconPos="right"></p-button>
+  </div>
+</ng-template>
+</p-card>

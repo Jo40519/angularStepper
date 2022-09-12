@@ -1,9 +1,23 @@
-
 {
-    "user": [
-        {
-            "id": 1,
-            "name": "João"
-        }
-    ]
+  "user": [
+    {
+      "id": 1,
+      "name": "João",
+      "email": "",
+      "dtBorn": ""
+    },
+    {
+      "name": "Milenna",
+      "email": "milenna.gabrielle@gmail.com",
+      "dtBorn": "10/08/1998",
+      "id": 3
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "name": "",
+      "price": 1000
+    }
+  ]
 }

@@ -18,15 +18,11 @@ export class StepComponent implements OnInit {
       routerLink: 'dados-pessoais',
   },
   {
-      label: 'Seat',
-      routerLink: 'seat'
+      label: 'Cadastrar seu Produto',
+      routerLink: 'cadastrar-produto'
   },
   {
-      label: 'Payment',
-      routerLink: 'payment'
-  },
-  {
-      label: 'Confirmation',
+      label: 'Conirmação',
       routerLink: 'confirmation'
   }
 ];

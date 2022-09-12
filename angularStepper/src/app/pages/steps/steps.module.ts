@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { StepsRoutingModule } from './step.routing';
 import {ButtonModule} from 'primeng/button';
 import {StepsModule} from 'primeng/steps';
-import {MenuItem} from 'primeng/api';
+import {ConfirmationService, MenuItem} from 'primeng/api';
 import {MessageService} from 'primeng/api'
 import { ToastModule } from 'primeng/toast';
 import { DadosPessoaisComponent } from './dados-pessoais/dados-pessoais.component';
@@ -22,15 +22,21 @@ import { InputMaskModule } from "primeng/inputmask";
 import { InputNumberModule } from "primeng/inputnumber";
 import { CascadeSelectModule } from "primeng/cascadeselect";
 import { InputTextareaModule } from "primeng/inputtextarea";
-
-
+import {CheckboxModule} from 'primeng/checkbox'
+import {RadioButtonModule} from 'primeng/radiobutton';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import { ProductComponent } from './product/product.component';
 
 
 @NgModule({
   declarations: [
     StepComponent,
     HomeComponent,
-    DadosPessoaisComponent
+    DadosPessoaisComponent,
+    ProductComponent
   ],
   imports: [
     //Angular
@@ -55,10 +61,19 @@ import { InputTextareaModule } from "primeng/inputtextarea";
     InputMaskModule,
     InputNumberModule,
     CascadeSelectModule,
-    InputTextareaModule
+    InputTextareaModule,
+    CheckboxModule,
+    RadioButtonModule,
+    ConfirmDialogModule,
+    MessageModule,
+    MessagesModule,
+
+    //SweetAlert2
+    SweetAlert2Module
   ],
   providers: [
-    MessageService
+    MessageService,
+    ConfirmationService
   ],
   exports: [
     StepComponent

@@ -9,12 +9,13 @@ export class TicketService {
   constructor() { }
 
   ticketInformation = {
-    personalInformation: {
-        firstname: '',
-        lastname: '',
-        age: null
+    dadosPessoais: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        dtBorn: null
     },
-    seatInformation: {
+    product: {
         class: null,
         wagon: null,
         seat: null
@@ -41,6 +42,6 @@ setTicketInformation(ticketInformation: any) {
 }
 
 complete() {
-    this.paymentComplete.next(this.ticketInformation.personalInformation);
+    this.paymentComplete.next(this.ticketInformation.dadosPessoais);
 }
 }

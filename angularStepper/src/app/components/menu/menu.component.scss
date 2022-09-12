@@ -1,35 +1,5 @@
-:host {
-  display: block;
-  width: 100%;
-
-  button {
-  width: 100%;
-  border: none;
-  padding: 10px 0px 10px 20px;
-  border-radius: 5px;
-  text-align: left;
-  font-weight: 600px;
-  font-size: 1rem;
-  cursor: pointer;
-
-
-    span {
-      display: inline-block;
-      vertical-align: middle;
-      width: 150px;
-      white-space: nowrap;
-      margin-left: 15px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-align: center;
-
-    }
-    color: #FFFFFF;
-    background-color: transparent;
-
-    &.selecionado {
-      background-color: #18181818;
-    }
-
-  }
+span {
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
 }
