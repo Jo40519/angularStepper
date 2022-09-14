@@ -85,7 +85,7 @@ validateMandatoryFields() {
       //   email: this.dadosPessoaisForm.get('email')?.value,
       //   dtBorn: this.dadosPessoaisForm.get('dtBorn')?.value
       // }
-      this.route.navigate(['home/cadastrar-produto'])
+      this.route.navigate(['cadastrar/cadastrar-produto'])
 
       return;
     }

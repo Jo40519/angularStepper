@@ -4,6 +4,9 @@ import { DadosPessoaisComponent } from './dados-pessoais/dados-pessoais.componen
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { ConsultaDadosPessoaisProductComponent } from './consulta-dados-pessoais-product/consulta-dados-pessoais-product.component';
+import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { ConsultarUserComponent } from './consultar-user/consultar-user.component';
 
 const routes: Routes = [
   {
@@ -12,9 +15,23 @@ const routes: Routes = [
     children:[
       {
         path: '',
-        redirectTo: 'dados-pessoais',
+        redirectTo: 'consulta-dados',
         pathMatch: 'full'
       },
+      {
+        path: 'consulta-dados',
+        component: ConsultaDadosPessoaisProductComponent
+      },
+      {
+        path: 'consultar-user',
+        component: ConsultarUserComponent
+      }
+    ]
+  },
+  {
+    path: 'cadastrar',
+    component: CadastrarComponent,
+    children: [
       {
         path: 'dados-pessoais',
         component: DadosPessoaisComponent
@@ -28,7 +45,7 @@ const routes: Routes = [
         component: ConfirmationComponent
       }
     ]
-  }
+  },
 ];
 
 @NgModule({

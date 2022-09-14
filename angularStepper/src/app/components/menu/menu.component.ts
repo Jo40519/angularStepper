@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { ThemeService } from '../../core/theme.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -13,7 +14,7 @@ export class MenuComponent implements OnInit {
   @Input() selecionado = false;
   @Output() click = new EventEmitter<void>();
   items!: MenuItem[];
-  constructor(private themeService: ThemeService) { }
+  constructor(private routerService: Router) { }
 
   ngOnInit(): void {
 
@@ -21,5 +22,17 @@ export class MenuComponent implements OnInit {
 
   onClick() {
     this.click.emit()
+  }
+
+  async cadastrar() {
+    await this.routerService.navigate(['home/cadastrar/dados-pessoais'])
+  }
+
+  async navigateConsultaDados() {
+    await this.routerService.navigate(['home/consulta-dados'])
+  }
+
+  async navigateConsultaUser() {
+    await this.routerService.navigate(['home/consultar-user'])
   }
 }

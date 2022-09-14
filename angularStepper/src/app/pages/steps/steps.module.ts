@@ -31,6 +31,14 @@ import {MessageModule} from 'primeng/message';
 import { ProductComponent } from './product/product.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { ConsultaDadosPessoaisProductComponent } from './consulta-dados-pessoais-product/consulta-dados-pessoais-product.component';
+import { HttpClientModule } from '@angular/common/http';
+import {DialogModule} from 'primeng/dialog';
+import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import {TableModule} from 'primeng/table';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import { ConsultarUserComponent } from './consultar-user/consultar-user.component';
+
 
 
 @NgModule({
@@ -39,7 +47,10 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     HomeComponent,
     DadosPessoaisComponent,
     ProductComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    ConsultaDadosPessoaisProductComponent,
+    CadastrarComponent,
+    ConsultarUserComponent
   ],
   imports: [
     //Angular
@@ -47,6 +58,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    HttpClientModule,
     //Aplicação
     StepsRoutingModule,
 
@@ -71,6 +83,9 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     MessageModule,
     MessagesModule,
     InputSwitchModule,
+    DialogModule,
+    TableModule,
+    ProgressSpinnerModule,
     //SweetAlert2
     SweetAlert2Module
   ],
@@ -79,7 +94,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     ConfirmationService,
     {
       provide: LOCALE_ID,
-      useValue: 'pt-BR'
+      useValue: 'pt-br'
     }
   ],
   exports: [

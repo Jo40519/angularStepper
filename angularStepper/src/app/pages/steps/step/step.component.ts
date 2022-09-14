@@ -9,6 +9,7 @@ import { DadosPessoais } from '../../../models/dados-pessoais.model';
 })
 export class StepComponent implements OnInit {
 
+  cadastrar: Boolean = true;
   dadosPessoais!: DadosPessoais
   items!: MenuItem[];
   activeIndex: number = 1;
@@ -17,7 +18,7 @@ export class StepComponent implements OnInit {
   ngOnInit(): void {
     this.items = [{
       label: 'Dados Pessoais',
-      routerLink: 'dados-pessoais',
+      routerLink: 'cadastrar/dados-pessoais',
   },
   {
       label: 'Cadastrar seu Produto',

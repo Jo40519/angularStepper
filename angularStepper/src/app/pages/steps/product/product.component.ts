@@ -51,13 +51,13 @@ export class ProductComponent implements OnInit {
       ]
     } else {
       this.product = this.ticketService.ticketInformation.product;
-      this.routerService.navigate(['home/confirmation'])
+      this.routerService.navigate(['cadastrar/confirmation'])
     }
   }
 
 
   back() {
-    this.routerService.navigate(['home/dados-pessoais'],
+    this.routerService.navigate(['cadastrar/dados-pessoais'],
     {
       state: {
         dadosPessoais: this.dadosPessoais

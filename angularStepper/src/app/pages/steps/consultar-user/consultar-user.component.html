@@ -1,0 +1,42 @@
+<p-card header="Consulte aqui seus Produtos" [style]="{'width': '80rem', 'margin-bottom': '2em'}">
+
+  <p-card>
+  <p-progressSpinner style="display: flex; align-items: center; justify-content: center;" *ngIf="isLoading"></p-progressSpinner>
+    <p-table *ngIf="!isLoading" [value]="dadosPessoais">
+      <ng-template pTemplate="caption">
+        <div class="flex">
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" placeholder="Search keyword" />
+            </span>
+        </div>
+    </ng-template>
+
+      <ng-template pTemplate="header">
+          <tr>
+              <th>Nome</th>
+              <th>Sobrenome</th>
+              <th>Email</th>
+              <th>Data de Nascimento</th>
+              <th>Editar</th>
+              <th>Excluir</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-dados>
+          <tr>
+              <td>{{dados.firstName}}</td>
+              <td>{{dados.lastName}}</td>
+              <td>{{dados.email}}</td>
+              <td>{{dados.dtBorn | date: 'dd/MM/yyy'}}</td>
+              <td style="text-align:start">
+                <button pButton pRipple type="button" icon="pi pi-pencil" class="p-button-rounded p-button-text"></button>
+            </td>
+              <td style="text-align:start">
+                <button pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded p-button-text"></button>
+            </td>
+          </tr>
+      </ng-template>
+  </p-table>
+  </p-card>
+
+</p-card>
