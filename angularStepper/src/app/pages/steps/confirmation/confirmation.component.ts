@@ -59,7 +59,9 @@ export class ConfirmationComponent implements OnInit {
         name: this.formCadastro.get('name')?.value,
         price: this.formCadastro.get('price')?.value
       }
-      this.dadosPessoaisProductService.cadastrarUser(dadosPessoais)
+      this.dadosPessoaisProductService.cadastrarUser(dadosPessoais).subscribe(() => {
+        console.log('usuario criado')
+      })
       this.dadosPessoaisProductService.cadastrarProduct(product).subscribe(async () => {
         await this.routerService.navigate(['home/consulta-dados'], {
           state: {
@@ -72,6 +74,6 @@ export class ConfirmationComponent implements OnInit {
   }
 
   back() {
-    this.routerService.navigate(['home/cadastrar-produto'])
+    this.routerService.navigate(['home/cadastrar/cadastrar-produto'])
   }
 }

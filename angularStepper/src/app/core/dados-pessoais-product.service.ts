@@ -28,4 +28,21 @@ export class DadosPessoaisProductService {
   getDadosProduct(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(this.urControllerProduct)
   }
+
+  getById(id: string):Observable<DadosPessoais> {
+    const url = `${this.urlControllerUser}?=${id}`
+    return this.httpClient.get<DadosPessoais>(url)
+  }
+
+
+  deleteUser(id: string):Observable<DadosPessoais> {
+    const url = `${this.urlControllerUser}/${id}`;
+    console.log(id)
+    return this.httpClient.delete<DadosPessoais>(url)
+  }
+
+  deleteProduct(id: string):Observable<Product> {
+    const url = `${this.urControllerProduct}/${id}`
+    return this.httpClient.delete<Product>(url)
+  }
 }

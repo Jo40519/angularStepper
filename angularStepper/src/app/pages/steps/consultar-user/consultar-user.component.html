@@ -1,8 +1,9 @@
-<p-card header="Consulte aqui seus Produtos" [style]="{'width': '80rem', 'margin-bottom': '2em'}">
+<p-messages [(value)]="msgs"></p-messages>
 
+<p-card header="Consulte aqui seus Dados" [style]="{'width': '80rem', 'margin-bottom': '2em'}">
   <p-card>
   <p-progressSpinner style="display: flex; align-items: center; justify-content: center;" *ngIf="isLoading"></p-progressSpinner>
-    <p-table *ngIf="!isLoading" [value]="dadosPessoais">
+    <p-table *ngIf="!isLoading"  [value]="dadosPessoais">
       <ng-template pTemplate="caption">
         <div class="flex">
             <span class="p-input-icon-left ml-auto">
@@ -14,6 +15,7 @@
 
       <ng-template pTemplate="header">
           <tr>
+              <th>Id</th>
               <th>Nome</th>
               <th>Sobrenome</th>
               <th>Email</th>
@@ -24,6 +26,7 @@
       </ng-template>
       <ng-template pTemplate="body" let-dados>
           <tr>
+              <td>{{dados.id}}</td>
               <td>{{dados.firstName}}</td>
               <td>{{dados.lastName}}</td>
               <td>{{dados.email}}</td>
@@ -32,7 +35,7 @@
                 <button pButton pRipple type="button" icon="pi pi-pencil" class="p-button-rounded p-button-text"></button>
             </td>
               <td style="text-align:start">
-                <button pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded p-button-text"></button>
+                <button pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded p-button-text" (click)="deleteUser(dados)"></button>
             </td>
           </tr>
       </ng-template>

@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
 
     visibleSidebar1: any;
     menuSelecionado = 'Home'
+    close: boolean = false
   constructor() { }
 
   ngOnInit(): void {

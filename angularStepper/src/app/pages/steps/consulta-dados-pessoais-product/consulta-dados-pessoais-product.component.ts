@@ -5,6 +5,9 @@ import { DadosPessoais } from '../../../models/dados-pessoais.model';
 import { Product } from '../../../models/product.model';
 import { DadosPessoaisProductService } from '../../../core/dados-pessoais-product.service';
 import { DadosPessoaisProduct } from '../../../models/dados-pessoais-product';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { DialogService } from 'primeng/dynamicdialog';
+import { ProductComponent } from '../product/product.component';
 
 export interface IDadosConsultarDadosComponent {
   msgs?: Message[];
@@ -18,13 +21,16 @@ export interface IDadosConsultarDadosComponent {
 })
 export class ConsultaDadosPessoaisProductComponent implements OnInit {
   msgs: Array<Message> = [];
-  dadosPessoais: Array<DadosPessoais> = [];
   product: Array<Product> = [];
-  dadosPessoaisProduct: Array<DadosPessoaisProduct> = [];
+  productId!: Product
   isLoading: boolean = true;
 
   public dados!: IDadosConsultarDadosComponent
-  constructor(private routerService: Router, private dadosPessoaisProdcutService: DadosPessoaisProductService) {
+  constructor(
+    private routerService: Router,
+    private dadosPessoaisProdcutService: DadosPessoaisProductService,
+    private formBuilder: FormBuilder,
+    private dialogService: DialogService) {
     this.dados = this.routerService.getCurrentNavigation()?.extras.state as IDadosConsultarDadosComponent
 
     this.msgs = this.dados?.msgs ? this.dados?.msgs : [];
@@ -37,7 +43,16 @@ export class ConsultaDadosPessoaisProductComponent implements OnInit {
         this.isLoading = false
       })
     }, 1000)
+  }
 
+  deleteProduct(dados: Product) {
+    this.dadosPessoaisProdcutService.deleteProduct(`${dados.id}`).subscribe(async () => {
+      this.msgs = [{severity:'success', summary:'Sucesso!', detail:'Usuário excluído com sucesso.'}]
+      await this.ngOnInit();
+    })
+  }
+
+  abrirModalEditarProduct(product: any) {
   }
 
 }

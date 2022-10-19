@@ -33,6 +33,6 @@ export class MenuComponent implements OnInit {
   }
 
   async navigateConsultaUser() {
-    await this.routerService.navigate(['home/consultar-user'])
+    await this.routerService.navigate([`home/see-user`])
   }
 }

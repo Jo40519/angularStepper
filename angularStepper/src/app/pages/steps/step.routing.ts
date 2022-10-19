@@ -21,12 +21,12 @@ const routes: Routes = [
       {
         path: 'consulta-dados',
         component: ConsultaDadosPessoaisProductComponent
-      },
-      {
-        path: 'consultar-user',
-        component: ConsultarUserComponent
       }
     ]
+  },
+  {
+    path: 'see-user',
+    component: ConsultarUserComponent
   },
   {
     path: 'cadastrar',

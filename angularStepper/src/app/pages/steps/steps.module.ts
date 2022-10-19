@@ -38,7 +38,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import {TableModule} from 'primeng/table';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import { ConsultarUserComponent } from './consultar-user/consultar-user.component';
-
+import { DynamicDialogModule, DialogService } from 'primeng/dynamicdialog';
 
 
 @NgModule({
@@ -50,7 +50,7 @@ import { ConsultarUserComponent } from './consultar-user/consultar-user.componen
     ConfirmationComponent,
     ConsultaDadosPessoaisProductComponent,
     CadastrarComponent,
-    ConsultarUserComponent
+    ConsultarUserComponent,
   ],
   imports: [
     //Angular
@@ -86,12 +86,14 @@ import { ConsultarUserComponent } from './consultar-user/consultar-user.componen
     DialogModule,
     TableModule,
     ProgressSpinnerModule,
+    DynamicDialogModule,
     //SweetAlert2
     SweetAlert2Module
   ],
   providers: [
     MessageService,
     ConfirmationService,
+    DialogService,
     {
       provide: LOCALE_ID,
       useValue: 'pt-br'

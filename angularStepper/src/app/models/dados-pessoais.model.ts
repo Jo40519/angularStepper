@@ -1,7 +1,7 @@
 export class DadosPessoais {
-  id?: number;
+  id?: number | undefined;
   firstName?: string;
   lastName?: string;
-  email?: String;
+  email?: string;
   dtBorn?: any;
 }
